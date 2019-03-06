@@ -1,26 +1,18 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import ChartContainer from './containers/ChartContainer'
 
 class App extends Component {
   render() {
+
+    const genres = [
+      {id: 1, name: "All", url: "https://itunes.apple.com/gb/rss/topsongs/limit=20/json"},
+      {id: 2, name: "Rock", url: "https://itunes.apple.com/gb/rss/topsongs/limit=20/genre=21/json"},
+      {id: 3, name: "Dance", url: "https://itunes.apple.com/gb/rss/topsongs/limit=20/genre=17/json"}
+    ]
+
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <ChartContainer genres={genres}/>
     );
   }
 }
